@@ -9,8 +9,8 @@ IMMUTABLE_ENABLE=true
 LP_ENABLE=true
 
 ifneq ($(wildcard $(srctree)/include/crypto/internal/rsa.h),)
-    $(warning [DEFEX] INTEGRITY_ENABLE)
-    INTEGRITY_ENABLE=true
+    #$(warning [DEFEX] INTEGRITY_ENABLE)
+    INTEGRITY_ENABLE=false
 endif
 
 # caches to enable
