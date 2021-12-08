@@ -5369,7 +5369,7 @@ static int selinux_nlmsg_perm(struct sock *sk, struct sk_buff *skb)
 		data += msg_len;
 	}
 
-        return rc;
+	return rc;
 }
 
 #ifdef CONFIG_NETFILTER
