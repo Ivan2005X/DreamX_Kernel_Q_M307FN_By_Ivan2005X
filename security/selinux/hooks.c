@@ -191,7 +191,7 @@ static DEFINE_MUTEX(selinux_sdcardfs_lock);
 
 #ifdef CONFIG_SECURITY_SELINUX_DEVELOP
 // [ SEC_SELINUX_PORTING_COMMON
-#if defined(CONFIG_ALWAYS_ENFORCE)
+#if defined(CONFIG_SECURITY_SELINUX_ALWAYS_ENFORCE)
 //CONFIG_RKP_KDP
 int selinux_enforcing __kdp_ro;
 #else
@@ -6864,7 +6864,7 @@ static __init int selinux_init(void)
 {
 	if (!security_module_enable("selinux")) {
 // [ SEC_SELINUX_PORTING_COMMON
-#ifdef CONFIG_ALWAYS_ENFORCE
+#ifdef CONFIG_SECURITY_SELINUX_ALWAYS_ENFORCE
 		selinux_enabled = 1;
 #else
 		selinux_enabled = 0;
@@ -6902,7 +6902,7 @@ static __init int selinux_init(void)
 		panic("SELinux: Unable to register AVC LSM notifier callback\n");
 
 // [ SEC_SELINUX_PORTING_COMMON
-#ifdef CONFIG_ALWAYS_ENFORCE
+#ifdef CONFIG_SECURITY_SELINUX_ALWAYS_ENFORCE
 		selinux_enforcing = 1;
 #endif
 // ] SEC_SELINUX_PORTING_COMMON
@@ -6996,7 +6996,7 @@ static int __init selinux_nf_ip_init(void)
 {
 	int err;
 // [ SEC_SELINUX_PORTING_COMMON
-#ifdef CONFIG_ALWAYS_ENFORCE
+#ifdef CONFIG_SECURITY_SELINUX_ALWAYS_ENFORCE
 		selinux_enabled = 1;
 #endif
 // ] SEC_SELINUX_PORTING_COMMON
