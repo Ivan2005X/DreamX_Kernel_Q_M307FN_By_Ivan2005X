@@ -1,5 +1,6 @@
 #!/bin/bash
 
+./usr/magisk/update_magisk.sh
 
 export PLATFORM_VERSION=10
 export ANDROID_MAJOR_VERSION=q
